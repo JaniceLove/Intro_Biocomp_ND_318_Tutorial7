@@ -1,0 +1,27 @@
+import pandas 
+import numpy #count function
+DNAseq = load data
+
+variable = summary table 
+
+columns are: sequenceID, sequenceLength, percentGC, meltingTemp 
+
+
+sequenceID = find >, read in sequenceID in row and column of summary_table 
+#if '>' in line:
+    capture sequenceID
+#else 
+sequenceLength = count characters in file and store in summary_table
+
+percentGC
+    use for loop to count number of G and C 
+        line.count('G')
+        line.count('C')
+        calculate percent: #G + #C / length  
+        
+meltingTemp
+    -only works on bp < 14 
+    -if num_of_bp <= 14,
+        4 * (num of G and C bases) + 2 * (num of A or T bases)
+    -else put -9999 into column 4     
+
