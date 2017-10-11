@@ -6,6 +6,8 @@ Infile=open("Lecture11.fasta","r")
 seqlength=[]
 percentGC=[]
 seqID=[]
+Gcount=0
+Ccount=0
 
 #need to count the number of characters (sequence length)
 #need to count the number of Gs and Cs and divide by length (G,C/# of characters)x 100%
@@ -24,4 +26,4 @@ for line in Infile:
 	percentGC.append((Gcount+Ccount)/Slength*100)
 
 # make lists into a dataframe that you can use to plot the histogram
-data=pandas.DataFrame(list(seqID,percentGC,seqlength),columns=['SequenceID,'SequenceLength','PercentGC'])
+data=pandas.DataFrame(list(zip(seqID,percentGC,seqlength)),columns=['seqID','seqlength','percentGC'])
