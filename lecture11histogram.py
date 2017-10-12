@@ -1,6 +1,10 @@
 #Generate a histogram of sequence lengths and GC content using the Lecture11.fasta file
-#load data
+#import packages
 import pandas
+import numpy
+from plotnine import *
+
+#open data
 Infile=open("Lecture11.fasta","r")
 all_lines=Infile.readlines()
 
@@ -27,9 +31,16 @@ for line in all_lines:
 		Ccount=line.count("C")
 		seqlength.append(Slength)
 		percentGC.append(float(Gcount+Ccount)/Slength*100)
-print (seqID)
-print (percentGC)
-print (seqlength)
+
 # make lists into a dataframe that you can use to plot the histogram
 data=pandas.DataFrame(list(zip(seqID,percentGC,seqlength)),columns=['seqID','seqlength','percentGC'])
-print (data)
+print (data.shape) #sanity check
+print (data.head(5)) #sanity check
+
+import numpy
+import pandas
+from plotnine import *)
+
+#plot of seqID vs seqlength
+a=ggplot(data,aes(x="seqID",y="seqlength"))
+a+geom_point()+coord_cartesian()
