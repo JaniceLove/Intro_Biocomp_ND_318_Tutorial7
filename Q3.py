@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 #read in data
 data = pd.read_csv("data.txt", sep = ",", header = 0)
 
-inFile = open("data.txt", sep = ",")
+inFile = open("data.txt", 'r')
 
 #create lists storing observations of each region 
 north = 0
@@ -57,4 +57,11 @@ objects = ('north', 'south', 'east', 'west')
 y_pos = np.arange(len(objects))
 averages = [north_ave, south_ave, east_ave, west_ave]
 
+#Question 3 code below:
+#scatterplot of all of the observations in data.txt
+from plotnine import *
+
+#create plot 
+a=ggplot(data,aes(x="region",y="observations"))
+a+geom_jitter(aes(color="region"))+xlab("region")+ylab("observations")+coord_cartesian()
 
