@@ -44,3 +44,6 @@ from plotnine import *
 #plot of seqID vs seqlength
 a=ggplot(data)+theme_classic()+xlab("seqID")+ylab("seqlength")
 a+geom_bar(aes(x="seqID",y="seqlength"),stat="summary")
+
+a=ggplot(data)+theme_classic()+xlab("seqID")+ylab("percentGC")
+a+geom_bar(aes(x="seqID",y="percentGC"),stat="summary")
