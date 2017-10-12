@@ -39,8 +39,8 @@ print (data.head(5)) #sanity check
 
 import numpy
 import pandas
-from plotnine import *)
+from plotnine import *
 
 #plot of seqID vs seqlength
-a=ggplot(data,aes(x="seqID",y="seqlength"))
-a+geom_point()+coord_cartesian()
+a=ggplot(data)+theme_classic()+xlab("seqID")+ylab("seqlength")
+a+geom_bar(aes(x="seqID",y="seqlength"),stat="summary")
