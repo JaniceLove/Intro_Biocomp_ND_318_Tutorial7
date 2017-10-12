@@ -1,3 +1,7 @@
+# Q1 from tutorial 7 assignment
+#Authors: Janice Love and Melissa Stephens
+#Date: October 11, 2017
+
 #Generate a histogram of sequence lengths and GC content using the Lecture11.fasta file
 #import packages
 import pandas
