@@ -41,13 +41,10 @@ data=pandas.DataFrame(list(zip(seqID,percentGC,seqlength)),columns=['seqID','seq
 print (data.shape) #sanity check
 print (data.head(5)) #sanity check
 
-import numpy
-import pandas
-from plotnine import *
-
 #plot of seqID vs seqlength
-a=ggplot(data)+theme_classic()+xlab("seqID")+ylab("seqlength")
+a=ggplot(data)+theme_classic()+xlab("Sequence ID")+ylab("Sequence length")
 a+geom_bar(aes(x="seqID",y="seqlength"),stat="summary")
 
-a=ggplot(data)+theme_classic()+xlab("seqID")+ylab("percentGC")
+#plot of seqID vs percentGC
+a=ggplot(data)+theme_classic()+xlab("Sequence ID")+ylab("Percent GC")
 a+geom_bar(aes(x="seqID",y="percentGC"),stat="summary")
